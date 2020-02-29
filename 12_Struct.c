@@ -3,21 +3,21 @@
 
 struct ex3
 {
- int foo;
- char bar;
- int flex[];
+    int foo;
+    char bar;
+    int flex[];
 };
 
 typedef struct
 {
- int x, y;
+    int x, y;
 } Point;
 
 struct coordinates
 {
- int x;
- int y;
- int z;
+    int x;
+    int y;
+    int z;
 };
 
 struct coordinates move(struct coordinates position, struct coordinates movement)
@@ -28,7 +28,8 @@ struct coordinates move(struct coordinates position, struct coordinates movement
     return position;
 }
 
-int main(void){
+int main(void)
+{
     /* Prints "5,8" on my machine, so there are 3 bytes of padding. */
     printf("%zu,%zu\n", sizeof(int) + sizeof(char), sizeof(struct ex3));
     /* valid: initialize foo=1, bar=2 members */
@@ -36,6 +37,4 @@ int main(void){
     /* valid: allocate 5 structure type ex3 objects along with an array of 3 ints per object */
     struct ex3 *pe3 = malloc(5 * (sizeof(*pe3) + sizeof(int[3])));
     pe3[0].flex[0] = 5; /* valid */
-
-
 }

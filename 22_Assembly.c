@@ -3,7 +3,9 @@
 
 static inline __attribute_const__ __u32 __arch_swahb32(__u32 x)
 {
-    __asm__ ("rev16 %0, %1" : "=r" (x) : "r" (x));
+    __asm__("rev16 %0, %1"
+            : "=r"(x)
+            : "r"(x));
     return x;
 }
 
@@ -12,7 +14,9 @@ static inline __attribute_const__ __u32 __arch_swahb32(__u32 x)
 
 static inline __attribute_const__ __u32 __arch_swab32(__u32 x)
 {
-    __asm__ ("rev %0, %1" : "=r" (x) : "r" (x));
+    __asm__("rev %0, %1"
+            : "=r"(x)
+            : "r"(x));
     return x;
 }
 

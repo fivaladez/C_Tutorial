@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-
-
 int main(int argc, char *argv[])
 {
     int a, b, c;
@@ -17,29 +15,36 @@ int main(int argc, char *argv[])
         printf("\nImprove your coding logic");
 
     a = 1;
-    switch (a) {
-        case 1:
-            puts("a is 1");
+    switch (a)
+    {
+    case 1:
+        puts("a is 1");
         break;
-        case 2:
-            puts("a is 2");
+    case 2:
+        puts("a is 2");
         break;
-        default:
-            puts("a is neither 1 nor 2");
+    default:
+        puts("a is neither 1 nor 2");
         break;
     }
 
-    enum msg_type { ACK, PING, ERROR }t;
+    enum msg_type
+    {
+        ACK,
+        PING,
+        ERROR
+    } t;
     /*Using an enum you can forget about default case*/
-    switch (t) {
-        case ACK:
-            // do nothing
+    switch (t)
+    {
+    case ACK:
+        // do nothing
         break;
-        case PING:
-            // do something
+    case PING:
+        // do something
         break;
-        case ERROR:
-            // do something else
+    case ERROR:
+        // do something else
         break;
     }
 

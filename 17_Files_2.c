@@ -25,7 +25,7 @@ int main(void)
         line_count++;
         /* Show the line details */
         printf("line[%06d]: chars=%06zd, buf size=%06zu, contents: %s", line_count,
-        line_size, line_buf_size, line_buf);
+               line_size, line_buf_size, line_buf);
         /* Get the next line */
         line_size = getline(&line_buf, &line_buf_size, fp);
     }

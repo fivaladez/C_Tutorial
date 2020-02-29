@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int main(void) {
-    bool x = true; /* equivalent to bool x = 1; */
+int main(void)
+{
+    bool x = true;  /* equivalent to bool x = 1; */
     bool y = false; /* equivalent to bool y = 0; */
     /*
     You can also use #define:
@@ -25,8 +26,9 @@ int main(void) {
         puts("This will also print!");
     }
 
-    char const* s = "Hello";
-    if (s && s[0]) { // (s != NULL && s[0] != '\0')
+    char const *s = "Hello";
+    if (s && s[0])
+    { // (s != NULL && s[0] != '\0')
         printf("this starts well, %c is alphabetic\n", s[0]);
     }
 }

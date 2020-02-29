@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 /* This data is not always stored in a structure, but it is sometimes for ease of use */
-struct Node {
+struct Node
+{
     /* Sometimes a key is also stored and used in the functions */
     int data;
-    struct Node* next;
-    struct Node* previous;
+    struct Node *next;
+    struct Node *previous;
 };
 void insert_at_beginning(struct Node **pheadNode, int value);
 void insert_at_end(struct Node **pheadNode, int value);
 void print_list(struct Node *headNode);
 void print_list_backwards(struct Node *headNode);
 void free_list(struct Node *headNode);
-int main(void) {
+int main(void)
+{
     /* Sometimes in a doubly linked list the last node is also stored */
     struct Node *head = NULL;
     printf("Insert a node at the beginning of the list.\n");
@@ -27,7 +29,8 @@ int main(void) {
     free_list(head);
     return 0;
 }
-void print_list_backwards(struct Node *headNode) {
+void print_list_backwards(struct Node *headNode)
+{
     if (NULL == headNode)
     {
         return;
@@ -38,22 +41,27 @@ void print_list_backwards(struct Node *headNode) {
     This can be done even more easily if a pointer to the last node is stored.
     */
     struct Node *i = headNode;
-    while (i->next != NULL) {
+    while (i->next != NULL)
+    {
         i = i->next; /* Move to the end of the list */
     }
-    while (i != NULL) {
+    while (i != NULL)
+    {
         printf("Value: %d\n", i->data);
         i = i->previous;
     }
 }
-void print_list(struct Node *headNode) {
+void print_list(struct Node *headNode)
+{
     /* Iterate through the list and print out the data member of each node */
     struct Node *i;
-    for (i = headNode; i != NULL; i = i->next) {
+    for (i = headNode; i != NULL; i = i->next)
+    {
         printf("Value: %d\n", i->data);
     }
 }
-void insert_at_beginning(struct Node **pheadNode, int value) {
+void insert_at_beginning(struct Node **pheadNode, int value)
+{
     struct Node *currentNode;
     if (NULL == pheadNode)
     {
@@ -67,7 +75,8 @@ void insert_at_beginning(struct Node **pheadNode, int value) {
     currentNode->next = NULL;
     currentNode->previous = NULL;
     currentNode->data = value;
-    if (*pheadNode == NULL) { /* The list is empty */
+    if (*pheadNode == NULL)
+    { /* The list is empty */
         *pheadNode = currentNode;
         return;
     }
@@ -75,7 +84,8 @@ void insert_at_beginning(struct Node **pheadNode, int value) {
     (*pheadNode)->previous = currentNode;
     *pheadNode = currentNode;
 }
-void insert_at_end(struct Node **pheadNode, int value) {
+void insert_at_end(struct Node **pheadNode, int value)
+{
     struct Node *currentNode;
     if (NULL == pheadNode)
     {
@@ -91,18 +101,22 @@ void insert_at_end(struct Node **pheadNode, int value) {
     currentNode->data = value;
     currentNode->next = NULL;
     currentNode->previous = NULL;
-    if (*pheadNode == NULL) {
+    if (*pheadNode == NULL)
+    {
         *pheadNode = currentNode;
         return;
     }
-    while (i->next != NULL) { /* Go to the end of the list */
+    while (i->next != NULL)
+    { /* Go to the end of the list */
         i = i->next;
     }
     i->next = currentNode;
     currentNode->previous = i;
 }
-void free_list(struct Node *node) {
-    while (node != NULL) {
+void free_list(struct Node *node)
+{
+    while (node != NULL)
+    {
         struct Node *next = node->next;
         free(node);
         node = next;

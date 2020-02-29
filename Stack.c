@@ -12,9 +12,9 @@ struct node
     struct node *next;
 };
 /* function declarations */
-int push(int, struct stack*);
-int pop(struct stack*);
-void destroy(struct stack*);
+int push(int, struct stack *);
+int pop(struct stack *);
+void destroy(struct stack *);
 int main(void)
 {
     int result = EXIT_SUCCESS;
@@ -32,7 +32,7 @@ int main(void)
     /* push 10 ints */
     {
         int data = 0;
-        for(i = 0; i < 10; i++)
+        for (i = 0; i < 10; i++)
         {
             printf("Pushing: %d\n", data);
             if (-1 == push(data, stack))
@@ -47,7 +47,7 @@ int main(void)
     if (EXIT_SUCCESS == result)
     {
         /* pop 5 ints */
-        for(i = 0; i < 5; i++)
+        for (i = 0; i < 5; i++)
         {
             printf("Popped: %i\n", pop(stack));
         }
@@ -56,8 +56,8 @@ int main(void)
     destroy(stack);
     return result;
 }
-    /* Push a value onto the stack. */
-    /* Returns 0 on success and -1 on failure. */
+/* Push a value onto the stack. */
+/* Returns 0 on success and -1 on failure. */
 int push(int data, struct stack *stack)
 {
     int result = 0;
@@ -76,8 +76,8 @@ int push(int data, struct stack *stack)
     }
     return result;
 }
-    /* Pop a value off of the stack. */
-    /* Returns the value popped off the stack */
+/* Pop a value off of the stack. */
+/* Returns the value popped off the stack */
 int pop(struct stack *stack)
 {
     struct node *top = stack->top;
@@ -87,11 +87,11 @@ int pop(struct stack *stack)
     free(top);
     return data;
 }
-    /* destroy the stack */
+/* destroy the stack */
 void destroy(struct stack *stack)
 {
     /* free all pointers */
-    while(stack->top != NULL)
+    while (stack->top != NULL)
     {
         pop(stack);
     }

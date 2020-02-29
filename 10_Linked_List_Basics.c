@@ -13,15 +13,15 @@ int main(void)
     head = NULL;
     int choice;
 
-    while(choice)
+    while (choice)
     {
         /*Create a new node and Initialize it*/
-        newNode = (struct node*)malloc(sizeof(struct node));
+        newNode = (struct node *)malloc(sizeof(struct node));
         printf("Enter a numeric value: ");
         scanf("%d", &newNode->data);
         newNode->next = NULL;
         /*Link Nodes*/
-        if(head == NULL)
+        if (head == NULL)
         {
             head = temp = newNode;
         }
@@ -35,7 +35,7 @@ int main(void)
     }
     /*Print data in Nodes*/
     temp = head;
-    while(temp != NULL)
+    while (temp != NULL)
     {
         printf("%d ", temp->data);
         temp = temp->next;

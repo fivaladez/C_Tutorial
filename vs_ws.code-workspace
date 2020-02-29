@@ -1,0 +1,9 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"miDebuggerPath": "c:\\mingw\\bin\\gdb.exe"
+		}
+	],
+	"settings": {}
+}

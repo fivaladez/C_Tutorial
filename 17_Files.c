@@ -1,4 +1,4 @@
-#include <stdio.h> /* for perror(), fopen(), fputs() and fclose() */
+#include <stdio.h>  /* for perror(), fopen(), fputs() and fclose() */
 #include <stdlib.h> /* for the EXIT_* macros */
 
 int main(int argc, char **argv)

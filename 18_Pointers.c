@@ -27,21 +27,18 @@ int main(void)
         s->someValue = 0; /* This is safe, we have checked that s is valid */
     }
 
-
     /*Using literal numbers instead of sizeof when requesting memory*/
-    int *intPtr = malloc(sizeof(*intPtr)*1000); /* allocating storage for 1000 int */
-    long *longPtr = malloc(sizeof(*longPtr)*1000); /* allocating storage for 1000 long */
+    int *intPtr = malloc(sizeof(*intPtr) * 1000);    /* allocating storage for 1000 int */
+    long *longPtr = malloc(sizeof(*longPtr) * 1000); /* allocating storage for 1000 long */
 
     int a = 2;
     int *p = &a;
 
     printf("%d", (*p)++); // Increment value pointed
-    printf("%d", *p++);  // increment address and then dereference it
-
+    printf("%d", *p++);   // increment address and then dereference it
 
     return 0;
 }
-
 
 /*Creating pointers to stack variables*/
 int *solution1(void)

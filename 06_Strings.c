@@ -38,20 +38,21 @@ int main(void)
     printf("%s\n", dst); /* "abcabc" will be printed */
 
     // Section 6.6: Iterating Over the Characters in a String
-    char * string = "hello world"; /* This 11 chars long, excluding the 0-terminator. */
+    char *string = "hello world"; /* This 11 chars long, excluding the 0-terminator. */
     size_t i = 0;
-    while (string[i] != '\0') { /* Stop looping when we reach the null-character. */
+    while (string[i] != '\0')
+    {                              /* Stop looping when we reach the null-character. */
         printf("%c\n", string[i]); /* Print each character of the string. */
         i++;
     }
 
     // Section 6.7: Creating Arrays of Strings
-    char * string_array[] = {
+    char *string_array[] = {
         "foo",
         "bar",
-        "baz"
-    };
-    for(i = 0; i < 3; i++){
+        "baz"};
+    for (i = 0; i < 3; i++)
+    {
         printf("%s\n", string_array[i]);
     }
 
@@ -68,21 +69,25 @@ int main(void)
 
     // Section 6.11: Copy and Concatenation: strcpy(), strcat()
     char mystring[10];
-    strcpy(mystring, "foo");//  Copy "foo" into `mystring`, until a NUL character is encountered.
+    strcpy(mystring, "foo"); //  Copy "foo" into `mystring`, until a NUL character is encountered.
     printf("%s\n", mystring);
-    strcat(mystring, "bar");// Append "bar" to `mystring`.
+    strcat(mystring, "bar"); // Append "bar" to `mystring`.
     printf("%s\n", mystring);
-    strcpy(mystring, "bar");//  Copy "bar" into `mystring`, overwriting the former contents.
+    strcpy(mystring, "bar"); //  Copy "bar" into `mystring`, overwriting the former contents.
     printf("%s\n", mystring);
 
     // Section 6.12: Comparsion: strcmp(), strncmp(), strcasecmp(), strncasecmp()
     int result = strcmp("AA", "BB"); // compute comparison once
-    if (result < 0) {
+    if (result < 0)
+    {
         printf("AA comes before BB\n");
-    } else if (result == 0) {
+    }
+    else if (result == 0)
+    {
         printf("AA equals BB\n");
-    } else { // last case: result > 0
+    }
+    else
+    { // last case: result > 0
         printf("AA comes after BB\n");
     }
-
 }
